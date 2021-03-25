@@ -21,17 +21,136 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      title="Team Generator"
     />
 
     <!-- Bootstrap CSS -->
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+
+    <style>
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        display: inline-block;
+      }
+    </style>
   </head>
   <body>
+    <h1 class="mt-5">Team Generator</h1>
+    <section class="container w-50 mt-4 mb-5">
+      <div class="row">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Patricipant's Name..."
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              id="button-addon2"
+            >
+              Add Participant
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <textarea
+          id="w3review"
+          name="w3review"
+          rows="4"
+          cols="76"
+          style="width: 100%"
+          disabled
+        >
+        </textarea>
+      </div>
+      <div class="row mt-5">
+        <h5>Insert number of teams:</h5>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              id="button-addon2"
+            >
+              Generate
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <button type="button" class="btn btn-primary w-100">Assign!</button>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6 p-1">
+          <div class="card border-primary mb-3 h-100">
+            <div class="card-header">Team 1</div>
+            <div class="card-body text-dark">
+              <p class="card-text">
+                Participant no.1<br />
+                Participant no.2<br />
+                Participant no.3<br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 p-1">
+          <div class="card border-primary mb-3 h-100">
+            <div class="card-header">Team 2</div>
+            <div class="card-body text-dark">
+              <p class="card-text">
+                Participant no.1<br />
+                Participant no.2<br />
+                Participant no.3<br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 p-1">
+          <div class="card border-primary mb-3 h-100">
+            <div class="card-header">Team 3</div>
+            <div class="card-body text-dark">
+              <p class="card-text">
+                Participant no.1<br />
+                Participant no.2<br />
+                Participant no.3<br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 p-1">
+          <div class="card border-primary mb-3 h-100">
+            <div class="card-header">Team 4</div>
+            <div class="card-body text-dark">
+              <p class="card-text">
+                Participant no.1<br />
+                Participant no.2<br />
+                Participant no.3<br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
