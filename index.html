@@ -40,6 +40,10 @@
       h2 {
         display: inline-block;
       }
+
+      ul {
+        list-style-type: none;
+      }
     </style>
   </head>
   <body>
@@ -53,10 +57,13 @@
             placeholder="Patricipant's Name..."
             aria-label="Recipient's username"
             aria-describedby="button-addon2"
+            id="participantName"
+            value=""
           />
           <div class="input-group-append">
             <button
               class="btn btn-outline-secondary"
+              id="addParticipantButton"
               type="button"
               id="button-addon2"
             >
@@ -66,15 +73,12 @@
         </div>
       </div>
       <div class="row">
-        <textarea
-          id="w3review"
-          name="w3review"
-          rows="4"
-          cols="76"
-          style="width: 100%"
-          disabled
-        >
-        </textarea>
+        <div class="col-12 border border-secondary pt-3 px-0">
+          <ul class="w-100 pl-3" id="participantList">
+            <li>12345</li>
+            <li>12345</li>
+          </ul>
+        </div>
       </div>
       <div class="row mt-5">
         <h5>Insert number of teams:</h5>
@@ -100,7 +104,7 @@
         <button type="button" class="btn btn-primary w-100">Assign!</button>
       </div>
       <div class="row mt-3">
-        <div class="col-6 p-1">
+        <div class="col-md-6 p-1">
           <div class="card border-primary mb-3 h-100">
             <div class="card-header">Team 1</div>
             <div class="card-body text-dark">
@@ -112,7 +116,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 p-1">
+        <div class="col-md-6 p-1">
           <div class="card border-primary mb-3 h-100">
             <div class="card-header">Team 2</div>
             <div class="card-body text-dark">
@@ -124,7 +128,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 p-1">
+        <div class="col-md-6 p-1">
           <div class="card border-primary mb-3 h-100">
             <div class="card-header">Team 3</div>
             <div class="card-body text-dark">
@@ -136,7 +140,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 p-1">
+        <div class="col-md-6 p-1">
           <div class="card border-primary mb-3 h-100">
             <div class="card-header">Team 4</div>
             <div class="card-body text-dark">
@@ -161,5 +165,21 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      // 1-  adding participants to the list, by clicking on the "add Participant" button
+      document
+        .getElementById("addParticipantButton")
+        .addEventListener("click", function () {
+          const participantName = document.getElementById("participantName")
+            .value;
+
+          // console.log(participantName);
+        });
+
+      // 2-  generating Teams cards by clicking on the "generate" button
+
+      // 3-  adding participants from the main list to teams cards bu clicking on "assign" button
+    </script>
   </body>
 </html>
