@@ -74,30 +74,28 @@
       </div>
       <div class="row">
         <div class="col-12 border border-secondary pt-3 px-0">
-          <ul class="w-100 pl-3" id="participantList">
-            <li>12345</li>
-            <li>12345</li>
-          </ul>
+          <ul class="w-100 pl-3" id="participantList"></ul>
         </div>
       </div>
       <div class="row mt-5">
-        <h5>Insert number of teams:</h5>
-        <div class="input-group mb-3">
+        <div class="col-10 px-0">
+          <label for="customRange3"><h5>Choose number of teams:</h5></label>
+          <input
+            type="range"
+            class="custom-range"
+            min="0"
+            max="10"
+            step="1"
+            id="customRange3"
+          />
+        </div>
+        <div class="col-2" style="position: relative">
           <input
             type="text"
-            class="form-control"
-            aria-label="Recipient's username"
-            aria-describedby="button-addon2"
+            value=""
+            disabled
+            style="top: 52%; position: absolute"
           />
-          <div class="input-group-append">
-            <button
-              class="btn btn-outline-secondary"
-              type="button"
-              id="button-addon2"
-            >
-              Generate
-            </button>
-          </div>
         </div>
       </div>
       <div class="row mt-3">
@@ -174,9 +172,35 @@
           const participantName = document.getElementById("participantName")
             .value;
 
-          // console.log(participantName);
+          let newListItem = document.createElement("li");
+          newListItem.innerText = participantName;
+
+          let participantList = document.getElementById("participantList");
+          participantList.appendChild(newListItem);
+
+          document.getElementById("participantName").value = "";
         });
 
+      const addParticipantOnEnter = function () {
+        const participantName = document.getElementById("participantName")
+          .value;
+
+        let newListItem = document.createElement("li");
+        newListItem.innerText = participantName;
+
+        let participantList = document.getElementById("participantList");
+        participantList.appendChild(newListItem);
+
+        document.getElementById("participantName").value = "";
+      };
+
+      document
+        .getElementById("participantName")
+        .addEventListener("keyup", function (event) {
+          if (event.keyCode === 13) {
+            addParticipantOnEnter();
+          }
+        });
       // 2-  generating Teams cards by clicking on the "generate" button
 
       // 3-  adding participants from the main list to teams cards bu clicking on "assign" button
